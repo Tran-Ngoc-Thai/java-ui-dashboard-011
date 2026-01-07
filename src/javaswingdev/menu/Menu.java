@@ -32,23 +32,13 @@ public class Menu extends JPanel {
         scroll.getViewport().setOpaque(false);
         scroll.setViewportBorder(null);
         add(scroll);
-        addTitle("MAIN");
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DASHBOARD, "Dashboard"));
-        addTitle("WEB APPS");
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.MAIL_OUTLINE, "Email", "Inbox", "Read", "Compose"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.MESSAGE, "Chat"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PERM_CONTACT_CALENDAR, "Calendar"));
-        addTitle("COMPONENT");
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.WHATSHOT, "UI Kit", "Accordion", "Alerts", "Badges", "Breadcrumbs", "Buttons", "Button group"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DIRECTIONS_BIKE, "Advanced UI", "Cropper", "Owl Carousel", "Sweet Alert"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DVR, "Forms", "Basic Elements", "Advanced Elements", "SEditors", "Wizard"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PIE_CHART_OUTLINED, "Charts", "Apex", "Flot", "Peity", "Sparkline"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.VIEW_LIST, "Table", "Basic Tables", "Data Table"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.INSERT_EMOTICON, "Icons", "Feather Icons", "Flag Icons", "Mdi Icons"));
-        addTitle("PAGES");
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.INBOX, "Special Pages", "Blank page", "Faq", "Invoice", "Profile", "Pricing", "Timeline"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.LOCK_OUTLINE, "Authentication", "Login", "Register"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.ERROR_OUTLINE, "Error", "404", "500"));
+        addMenuItem(new ModelMenuItem(null, "TRANG CHỦ"));
+        addMenuItem(new ModelMenuItem(null, "GIỚI THIỆU PHẦN MỀM"));
+        addMenuItem(new ModelMenuItem(null, "MÁY VRU 812/S", "TÍNH NĂNG KỸ, CHIẾN THUẬT", "THÔNG SỐ KỸ THUẬT", "KHAI THÁC SỬ DỤNG", "MÔ PHỎNG QUÁ TRÌNH LIÊN LẠC", "CŨNG CỐ KIẾN THỨC"));
+        addMenuItem(new ModelMenuItem(null, "MÁY VRH 811/S"));
+        addMenuItem(new ModelMenuItem(null, "MÁY VRU 851"));
+        addMenuItem(new ModelMenuItem(null, "MÁY VRS 631/S"));
+        addMenuItem(new ModelMenuItem(null, "TRỢ GIÚP"));
     }
 
     private JScrollPane createScroll() {
@@ -94,13 +84,13 @@ public class Menu extends JPanel {
         panelMenu.add(createMenuItem(menu), "h 35!");
     }
 
-    public void addTitle(String title) {
-        JLabel label = new JLabel(title);
-        label.setBorder(new EmptyBorder(15, 20, 5, 5));
-        label.setFont(label.getFont().deriveFont(Font.BOLD));
-        label.setForeground(new Color(170, 170, 170));
-        panelMenu.add(label);
-    }
+//    public void addTitle(String title) {
+//        JLabel label = new JLabel(title);
+//        label.setBorder(new EmptyBorder(15, 20, 5, 5));
+//        label.setFont(label.getFont().deriveFont(Font.BOLD));
+//        label.setForeground(new Color(170, 170, 170));
+//        panelMenu.add(label);
+//    }
 
     public void addSpace(int size) {
         panelMenu.add(new JLabel(), "h " + size + "!");

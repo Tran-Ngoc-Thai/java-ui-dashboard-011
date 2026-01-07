@@ -5,6 +5,7 @@ import javaswingdev.form.Form_CungCoKienThuc;
 import javaswingdev.form.Form_Dashboard;
 import javaswingdev.form.Form_GioiThieu;
 import javaswingdev.form.Form_KhaiThacSuDung;
+import javaswingdev.form.Form_TinhNangKyChienThuat;
 import javaswingdev.menu.EventMenuSelected;
 
 public class Main extends javax.swing.JFrame {
@@ -41,10 +42,10 @@ public class Main extends javax.swing.JFrame {
                 } 
                 
 //                // 3. Trang Máy VRU-812 (Ví dụ: Mục số 2, menu con thứ 1)
-//                else if (index == 2 && indexSubMenu == 1) {
-//                    showForm(new Form_VRU812());
-//                } 
-//                
+                else if (index == 2 && indexSubMenu == 1) {
+                    showForm(new Form_TinhNangKyChienThuat());
+                } 
+                
                 // 4. Trang Máy VRH-811 (Ví dụ: Mục số 2, menu con thứ 2)
                 else if (index == 2 && indexSubMenu == 2) {
                     showForm(new Form_KhaiThacSuDung());

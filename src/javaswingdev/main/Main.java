@@ -1,8 +1,10 @@
 package javaswingdev.main;
 
 import java.awt.Component;
+import javaswingdev.form.Form_CungCoKienThuc;
 import javaswingdev.form.Form_Dashboard;
-import javaswingdev.form.Form_Empty;
+import javaswingdev.form.Form_GioiThieu;
+import javaswingdev.form.Form_KhaiThacSuDung;
 import javaswingdev.menu.EventMenuSelected;
 
 public class Main extends javax.swing.JFrame {
@@ -17,25 +19,67 @@ public class Main extends javax.swing.JFrame {
     private void init() {
         main = this;
         titleBar.initJFram(this);
+        
+        // Xử lý sự kiện khi click vào Menu
         menu.addEvent(new EventMenuSelected() {
             @Override
             public void menuSelected(int index, int indexSubMenu) {
+                
+                // Dòng này in ra console để bạn biết mình đang bấm vào mục số mấy
+                System.out.println("Đang chọn: Index=" + index + " | SubIndex=" + indexSubMenu);
+
+                // --- BẮT ĐẦU ĐIỀU HƯỚNG ---
+                
+                // 1. Mặc định: Trang chủ (Dashboard)
                 if (index == 0 && indexSubMenu == 0) {
                     showForm(new Form_Dashboard());
-                } else {
-                    showForm(new Form_Empty(index + " " + indexSubMenu));
-                }
+                } 
+                
+                // 2. Trang Giới thiệu (Ví dụ: Mục số 1 trên menu)
+                else if (index == 1 && indexSubMenu == 0) {
+                    showForm(new Form_GioiThieu());
+                } 
+                
+//                // 3. Trang Máy VRU-812 (Ví dụ: Mục số 2, menu con thứ 1)
+//                else if (index == 2 && indexSubMenu == 1) {
+//                    showForm(new Form_VRU812());
+//                } 
+//                
+                // 4. Trang Máy VRH-811 (Ví dụ: Mục số 2, menu con thứ 2)
+                else if (index == 2 && indexSubMenu == 2) {
+                    showForm(new Form_KhaiThacSuDung());
+                } 
+                //4. Trang Máy VRH-811 (Ví dụ: Mục số 2, menu con thứ 2)
+                else if (index == 2 && indexSubMenu == 4) {
+                    showForm(new Form_CungCoKienThuc());
+                } 
+//                
+//                // 5. Các trường hợp còn lại (Chưa làm xong) -> Hiện Form Empty báo lỗi
+//                else {
+//                    showForm(new Form_Empty("Mục " + index + "." + indexSubMenu, 
+//                            "<html>Nội dung đang được cập nhật...</html>"));
+//                }
             }
         });
+
+        // Mặc định chọn mục đầu tiên khi mở app
         menu.setSelectedIndex(0, 0);
     }
     
     public void showForm(Component com) {
-        body.removeAll();
-        body.add(com);
-        body.repaint();
-        body.revalidate();
-    }
+            // 1. Xóa hết cái cũ
+            body.removeAll(); // Sửa 'mainPanel' thành 'body'
+
+            // 2. Ép kiểu Layout là BorderLayout
+            body.setLayout(new java.awt.BorderLayout()); // Sửa 'mainPanel' thành 'body'
+
+            // 3. Add form vào vị trí CENTER
+            body.add(com, java.awt.BorderLayout.CENTER); // Sửa 'mainPanel' thành 'body'
+
+            // 4. Vẽ lại
+            body.repaint();
+            body.revalidate();
+        }
     
     public static Main getMain() {
         return main;
@@ -86,7 +130,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(panelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 1026, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 1026, Short.MAX_VALUE)
                 .addContainerGap())
         );
         backgroundLayout.setVerticalGroup(

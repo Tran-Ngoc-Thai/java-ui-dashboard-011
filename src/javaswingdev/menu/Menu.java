@@ -3,15 +3,12 @@ package javaswingdev.menu;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
-import javaswingdev.GoogleMaterialDesignIcon;
 import javaswingdev.swing.scroll.ScrollBar;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.border.EmptyBorder;
 import net.miginfocom.swing.MigLayout;
 
 public class Menu extends JPanel {
@@ -34,10 +31,10 @@ public class Menu extends JPanel {
         add(scroll);
         addMenuItem(new ModelMenuItem(null, "TRANG CHỦ"));
         addMenuItem(new ModelMenuItem(null, "GIỚI THIỆU PHẦN MỀM"));
-        addMenuItem(new ModelMenuItem(null, "MÁY VRU 812/S", "TÍNH NĂNG KỸ, CHIẾN THUẬT", "THÔNG SỐ KỸ THUẬT", "KHAI THÁC SỬ DỤNG", "MÔ PHỎNG QUÁ TRÌNH LIÊN LẠC", "CŨNG CỐ KIẾN THỨC"));
-        addMenuItem(new ModelMenuItem(null, "MÁY VRH 811/S"));
-        addMenuItem(new ModelMenuItem(null, "MÁY VRU 851"));
-        addMenuItem(new ModelMenuItem(null, "MÁY VRS 631/S"));
+        addMenuItem(new ModelMenuItem(null, "MÁY VRU 812/S", "TÍNH NĂNG KỸ, CHIẾN THUẬT", "KHAI THÁC SỬ DỤNG", "MÔ PHỎNG QUÁ TRÌNH LIÊN LẠC", "CỦNG CỐ KIẾN THỨC"));
+        addMenuItem(new ModelMenuItem(null, "MÁY VRH 811/S", "TÍNH NĂNG KỸ, CHIẾN THUẬT", "KHAI THÁC SỬ DỤNG", "MÔ PHỎNG QUÁ TRÌNH LIÊN LẠC", "CỦNG CỐ KIẾN THỨC"));
+        addMenuItem(new ModelMenuItem(null, "MÁY VRU 851", "TÍNH NĂNG KỸ, CHIẾN THUẬT", "KHAI THÁC SỬ DỤNG", "MÔ PHỎNG QUÁ TRÌNH LIÊN LẠC", "CỦNG CỐ KIẾN THỨC"));
+        addMenuItem(new ModelMenuItem(null, "MÁY VRS 631/S", "TÍNH NĂNG KỸ, CHIẾN THUẬT", "KHAI THÁC SỬ DỤNG", "MÔ PHỎNG QUÁ TRÌNH LIÊN LẠC", "CỦNG CỐ KIẾN THỨC"));
         addMenuItem(new ModelMenuItem(null, "TRỢ GIÚP"));
     }
 
